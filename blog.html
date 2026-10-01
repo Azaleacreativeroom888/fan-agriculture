@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ｜実りのノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ine:#D8A93B;
+  --ine-deep:#9A6F12;
+  --ringo:#A3262A;
+  --ha:#4C6B3A;
+  --tsuchi:#33261B;
+  --kome:#FBF5E0;
+  --sora:#F3E3A8;
+  --line:rgba(51,38,27,.18);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--sans);color:var(--tsuchi);background:var(--kome);line-height:1.9}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ringo);outline-offset:3px}
+
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 5vw;background:var(--sora)}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.2rem;text-decoration:none;letter-spacing:.08em}
+nav ul{list-style:none;padding:0;display:flex;gap:22px}
+nav a{text-decoration:none;font-weight:500;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-color:var(--ringo)}
+
+.page-head{background:linear-gradient(180deg,var(--sora) 0%,var(--kome) 100%);padding:36px 5vw 28px}
+.page-head div{max-width:640px;margin:auto}
+.page-head h1{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,5vw,2.8rem);letter-spacing:.08em}
+.page-head p{margin-top:6px}
+
+main{max-width:640px;margin:auto;padding:12px 5vw 64px}
+
+/* タイムライン：Twitter形式 */
+.feed{border-top:1px solid var(--line)}
+.post{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:20px 4px;border-bottom:1px solid var(--line)}
+.icon{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:800;color:var(--kome);background:var(--ine-deep)}
+.post:nth-child(even) .icon{background:var(--ringo)}
+.post time{display:block;font-size:.85rem;font-weight:500;color:var(--ine-deep);line-height:1.5}
+.post:nth-child(even) time{color:var(--ringo)}
+.post p{margin-top:4px;overflow-wrap:anywhere}
+
+footer{background:var(--tsuchi);color:var(--kome);padding:28px 5vw;text-align:center;font-size:.9rem}
+footer a{margin:0 10px}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">実りのノート</a>
+  <nav aria-label="メインメニュー">
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="blog.html" aria-current="page">ブログ</a></li>
+      <li><a href="column.html">コラム</a></li>
+      <li><a href="about.html">このサイトについて</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-head">
+  <div>
+    <h1>ブログ</h1>
+    <p>農学の勉強の記録です。日付と、その日のひとことだけ。</p>
+  </div>
+</div>
+
+<main>
+  <!--
+    記録を足すときは、下の <article> を1つコピーして、
+    一番上に貼り付け、日付と本文を書き換えてください。
+    <time> の datetime は「年-月-日」の形で入れます。
+  -->
+  <div class="feed">
+    <article class="post">
+      <div class="icon" aria-hidden="true">農</div>
+      <div>
+        <time datetime="2026-10-01">2026.10.01</time>
+        <p>ここに今日の勉強の記録が入ります。（サンプル）</p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="icon" aria-hidden="true">農</div>
+      <div>
+        <time datetime="2026-09-30">2026.09.30</time>
+        <p>ここに前の日の記録が入ります。（サンプル）</p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="icon" aria-hidden="true">農</div>
+      <div>
+        <time datetime="2026-09-29">2026.09.29</time>
+        <p>ここにその前の記録が入ります。少し長めに書くときも、このまま続けて書けます。（サンプル）</p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="icon" aria-hidden="true">農</div>
+      <div>
+        <time datetime="2026-09-28">2026.09.28</time>
+        <p>ここに記録が入ります。（サンプル）</p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="icon" aria-hidden="true">農</div>
+      <div>
+        <time datetime="2026-09-27">2026.09.27</time>
+        <p>ここに記録が入ります。（サンプル）</p>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <nav aria-label="フッターメニュー">
+    <a href="index.html">ホーム</a><a href="blog.html">ブログ</a><a href="column.html">コラム</a><a href="about.html">このサイトについて</a>
+  </nav>
+  <p style="margin-top:10px">© 実りのノート</p>
+</footer>
+
+</body>
+</html>
