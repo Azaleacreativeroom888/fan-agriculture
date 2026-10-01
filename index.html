@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>実りのノート｜農学の勉強サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ine:#D8A93B;      /* 稲穂の金 */
+  --ine-deep:#9A6F12;
+  --ringo:#A3262A;    /* 林檎の赤 */
+  --ha:#4C6B3A;       /* 葉の緑 */
+  --tsuchi:#33261B;   /* 土の茶 */
+  --kome:#FBF5E0;     /* 籾殻の地 */
+  --sora:#F3E3A8;     /* 刈り入れ前の空 */
+  --line:rgba(51,38,27,.18);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--sans);color:var(--tsuchi);background:var(--kome);line-height:1.9}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ringo);outline-offset:3px}
+
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 5vw;background:var(--sora)}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.2rem;text-decoration:none;letter-spacing:.08em}
+nav ul{list-style:none;padding:0;display:flex;gap:22px}
+nav a{text-decoration:none;font-weight:500;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-color:var(--ringo)}
+
+.hero{background:linear-gradient(180deg,var(--sora) 0%,var(--kome) 100%);padding:40px 5vw 56px}
+.hero-inner{max-width:1040px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.2;letter-spacing:.06em}
+.hero p{margin-top:18px;max-width:30em}
+.hero .go{display:inline-block;margin-top:26px;padding:12px 28px;background:var(--ringo);color:var(--kome);text-decoration:none;font-weight:500;border-radius:999px}
+.hero .go:hover{background:#821D21}
+.hero svg{width:100%;height:auto;max-height:440px}
+.sway{transform-origin:60px 440px;animation:sway 7s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+
+main section{max-width:1040px;margin:auto;padding:56px 5vw}
+h2{font-family:var(--serif);font-size:1.7rem;letter-spacing:.06em;margin-bottom:8px}
+.lead{margin-bottom:28px}
+
+/* 学ぶこと：稲と林檎の二本立て */
+.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.theme{padding:24px 22px}
+.theme:nth-child(odd){background:#F6E7B0}
+.theme:nth-child(even){background:#F3D6D0}
+.theme h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:6px}
+.theme p{font-size:.95rem;line-height:1.8}
+
+/* ブログ抜粋：Twitter形式 */
+.feed{max-width:620px;border-top:1px solid var(--line)}
+.post{padding:18px 4px;border-bottom:1px solid var(--line)}
+.post time{display:block;font-size:.85rem;color:var(--ine-deep);font-weight:500}
+.more{display:inline-block;margin-top:18px;font-weight:500}
+
+/* コラム入口 */
+.col-list{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line)}
+.col-list a{padding:22px 18px;text-decoration:none;border-right:1px solid var(--line);background:#fff8;transition:background .2s}
+.col-list a:last-child{border-right:0}
+.col-list a:hover{background:#F6E7B0}
+.col-list b{display:block;font-family:var(--serif);font-size:1.15rem;margin-bottom:4px}
+.col-list span{font-size:.9rem}
+
+footer{background:var(--tsuchi);color:var(--kome);padding:28px 5vw;text-align:center;font-size:.9rem}
+footer a{margin:0 10px}
+
+@media (max-width:760px){
+  .hero-inner,.themes{grid-template-columns:1fr}
+  .col-list{grid-template-columns:1fr 1fr}
+  .col-list a:nth-child(2){border-right:0}
+  .col-list a:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media (prefers-reduced-motion:reduce){.sway{animation:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">実りのノート</a>
+  <nav aria-label="メインメニュー">
+    <ul>
+      <li><a href="index.html" aria-current="page">ホーム</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="column.html">コラム</a></li>
+      <li><a href="about.html">このサイトについて</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>実りを、<br>学ぶ。</h1>
+      <p>稲穂が頭を垂れ、林檎が色づくまで。農学の勉強の記録と、そこから生まれた漫画やイラスト、小さな文章を置いていきます。</p>
+      <a class="go" href="blog.html">勉強の記録を見る</a>
+    </div>
+
+    <svg viewBox="0 0 420 440" role="img" aria-label="頭を垂れた稲穂と、枝に実る二つの林檎のイラスト">
+      <defs>
+        <symbol id="grain" viewBox="-8 -16 16 32" overflow="visible">
+          <ellipse rx="6.5" ry="14" fill="#D8A93B"/>
+          <path d="M-2 -8 Q0 0 -2 8" stroke="#9A6F12" stroke-width="1.2" fill="none"/>
+        </symbol>
+        <symbol id="apple" viewBox="0 0 60 60" overflow="visible">
+          <path d="M30 14C18 4 2 12 2 30c0 18 12 28 22 28 3 0 4-2 6-2s3 2 6 2c10 0 22-10 22-28C58 12 42 4 30 14Z" fill="#A3262A"/>
+          <path d="M14 22c-4 6-4 14 0 20" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M30 14c0-6 2-10 7-12" stroke="#33261B" stroke-width="3" stroke-linecap="round" fill="none"/>
+        </symbol>
+      </defs>
+
+      <!-- 稲穂 -->
+      <g class="sway">
+        <path d="M60 440C70 300 90 180 190 100" stroke="#8E9B3F" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M80 400C130 380 160 340 175 300" stroke="#8E9B3F" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <g stroke="#9A6F12" stroke-width="1.2" stroke-linecap="round">
+          <path d="M200 98l38-26M222 98l36-18M244 107l34-6M262 124l28 8M275 146l22 20M283 172l12 30"/>
+        </g>
+        <path d="M190 100C230 90 270 120 285 175" stroke="#9A6F12" stroke-width="2" fill="none"/>
+        <use href="#grain" x="0" y="0" width="16" height="32" transform="translate(200 98) rotate(82)"/>
+        <use href="#grain" width="16" height="32" transform="translate(222 98) rotate(95)"/>
+        <use href="#grain" width="16" height="32" transform="translate(244 107) rotate(115)"/>
+        <use href="#grain" width="16" height="32" transform="translate(262 124) rotate(135)"/>
+        <use href="#grain" width="16" height="32" transform="translate(275 146) rotate(155)"/>
+        <use href="#grain" width="16" height="32" transform="translate(283 172) rotate(170)"/>
+        <use href="#grain" width="16" height="32" transform="translate(208 114) rotate(70)"/>
+        <use href="#grain" width="16" height="32" transform="translate(232 120) rotate(100)"/>
+        <use href="#grain" width="16" height="32" transform="translate(252 138) rotate(125)"/>
+        <use href="#grain" width="16" height="32" transform="translate(268 162) rotate(150)"/>
+      </g>
+
+      <!-- 林檎の枝 -->
+      <path d="M420 250C380 252 340 262 300 290" stroke="#5A3F2A" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M345 262C335 245 320 240 305 244C312 258 328 266 345 262Z" fill="#4C6B3A"/>
+      <path d="M385 255C392 238 408 232 420 236C414 252 400 260 385 255Z" fill="#4C6B3A"/>
+      <use href="#apple" x="0" y="0" width="60" height="60" transform="translate(272 276) scale(1.9)"/>
+      <use href="#apple" width="60" height="60" transform="translate(368 300) scale(1.3)"/>
+    </svg>
+  </div>
+</div>
+
+<main>
+  <section aria-labelledby="themes">
+    <h2 id="themes">学んでいること</h2>
+    <p class="lead">農学のいろいろな分野を、少しずつ広げながら学んでいます。</p>
+    <div class="themes">
+      <div class="theme"><h3>作物学</h3><p>稲や麦、野菜など、作物の育ち方と育て方。</p></div>
+      <div class="theme"><h3>園芸学</h3><p>果樹や野菜、花の栽培と品種。</p></div>
+      <div class="theme"><h3>土壌・肥料</h3><p>土の性質と、植物に必要な栄養。</p></div>
+      <div class="theme"><h3>植物病理・昆虫</h3><p>作物の病気や害虫と、その防ぎ方。</p></div>
+      <div class="theme"><h3>農業経済・食料</h3><p>農業のしくみと、食料をめぐる問題。</p></div>
+      <div class="theme"><h3>環境・農業工学</h3><p>農業と環境のつながり、機械や技術。</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="recent">
+    <h2 id="recent">最近の記録</h2>
+    <p class="lead">ブログには、日付と一言の日記だけを残しています。</p>
+    <div class="feed">
+      <article class="post"><time datetime="2026-10-01">2026.10.01</time>ここに今日の勉強の記録が入ります。（サンプル）</article>
+      <article class="post"><time datetime="2026-09-30">2026.09.30</time>ここに前の日の記録が入ります。（サンプル）</article>
+      <article class="post"><time datetime="2026-09-29">2026.09.29</time>ここにその前の記録が入ります。（サンプル）</article>
+    </div>
+    <a class="more" href="blog.html">ブログをもっと見る</a>
+  </section>
+
+  <section aria-labelledby="column">
+    <h2 id="column">コラム</h2>
+    <p class="lead">勉強から生まれた作品と、短い読みものです。</p>
+    <div class="col-list">
+      <a href="column.html"><b>漫画</b><span>農学にまつわる短い漫画</span></a>
+      <a href="column.html"><b>イラスト</b><span>稲や果樹のスケッチ</span></a>
+      <a href="column.html"><b>4コマ</b><span>畑と田んぼの小さな話</span></a>
+      <a href="column.html"><b>小論文</b><span>気軽に読める軽い記事</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <nav aria-label="フッターメニュー">
+    <a href="index.html">ホーム</a><a href="blog.html">ブログ</a><a href="column.html">コラム</a><a href="about.html">このサイトについて</a>
+  </nav>
+  <p style="margin-top:10px">© 実りのノート</p>
+</footer>
+
+</body>
+</html>
