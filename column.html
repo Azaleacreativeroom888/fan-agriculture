@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コラム｜実りのノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ine:#D8A93B;
+  --ine-deep:#9A6F12;
+  --ringo:#A3262A;
+  --ha:#4C6B3A;
+  --tsuchi:#33261B;
+  --kome:#FBF5E0;
+  --sora:#F3E3A8;
+  --line:rgba(51,38,27,.18);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--tsuchi);background:var(--kome);line-height:1.9}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ringo);outline-offset:3px}
+
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 5vw;background:var(--sora)}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.2rem;text-decoration:none;letter-spacing:.08em}
+nav ul{list-style:none;padding:0;display:flex;gap:22px}
+nav a{text-decoration:none;font-weight:500;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-color:var(--ringo)}
+
+.page-head{background:linear-gradient(180deg,var(--sora) 0%,var(--kome) 100%);padding:36px 5vw 24px}
+.page-head div{max-width:1040px;margin:auto}
+.page-head h1{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,5vw,2.8rem);letter-spacing:.08em}
+.page-head p{margin-top:6px}
+.jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.jump a{padding:6px 18px;border:1px solid var(--tsuchi);border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem}
+.jump a:hover{background:var(--ringo);border-color:var(--ringo);color:var(--kome)}
+
+main section{max-width:1040px;margin:auto;padding:48px 5vw 8px;scroll-margin-top:12px}
+h2{font-family:var(--serif);font-size:1.6rem;letter-spacing:.06em;margin-bottom:6px;padding-left:14px;border-left:6px solid var(--ine)}
+section:nth-of-type(even) h2{border-color:var(--ringo)}
+.lead{margin-bottom:22px}
+
+/* 作品カード（画像が入るまでは枠だけ表示） */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border:1px solid var(--line);background:#fff8}
+.card .pic{aspect-ratio:4/3;background:#F6E7B0;display:grid;place-items:center;color:var(--ine-deep);font-size:.9rem}
+.card:nth-child(even) .pic{background:#F3D6D0;color:var(--ringo)}
+.card .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.card .cap{padding:12px 14px}
+.card time{display:block;font-size:.8rem;color:var(--ine-deep);font-weight:500}
+.card h3{font-family:var(--serif);font-size:1.05rem}
+
+/* 4コマ：縦に4つ */
+.yon{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:20px}
+.yon .card .pic{aspect-ratio:3/4}
+.yon .strip{display:grid;grid-template-rows:repeat(4,1fr);gap:6px;padding:10px;background:#fff8}
+.yon .frame{aspect-ratio:2/1;border:2px solid var(--tsuchi);background:#F6E7B0;display:grid;place-items:center;font-size:.8rem;color:var(--ine-deep)}
+
+/* 小論文 */
+.essays{border-top:1px solid var(--line);max-width:720px}
+.essay{padding:22px 4px;border-bottom:1px solid var(--line)}
+.essay time{font-size:.85rem;font-weight:500;color:var(--ringo)}
+.essay h3{font-family:var(--serif);font-size:1.3rem;margin:2px 0 6px}
+.essay a{text-decoration:none}
+.essay a:hover h3{text-decoration:underline;text-decoration-color:var(--ine)}
+
+footer{margin-top:56px;background:var(--tsuchi);color:var(--kome);padding:28px 5vw;text-align:center;font-size:.9rem}
+footer a{margin:0 10px}
+
+@media (max-width:760px){
+  .cards{grid-template-columns:1fr 1fr}
+  .yon{grid-template-columns:1fr 1fr}
+}
+@media (max-width:460px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">実りのノート</a>
+  <nav aria-label="メインメニュー">
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="column.html" aria-current="page">コラム</a></li>
+      <li><a href="about.html">このサイトについて</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-head">
+  <div>
+    <h1>コラム</h1>
+    <p>農学の勉強から生まれた作品と、気軽に読める短い文章です。</p>
+    <nav class="jump" aria-label="コラム内の移動">
+      <a href="#manga">漫画</a><a href="#illust">イラスト</a><a href="#yonkoma">4コマ</a><a href="#essay">小論文</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+  <!--
+    作品の足し方：
+    ・<div class="pic">…</div> の中身を <img src="画像のファイル名" alt="作品の説明"> に書き換えると、画像が入ります。
+    ・カードを増やすときは <article class="card"> を丸ごとコピーしてください。
+    ・小論文は <article class="essay"> を1つコピーして、タイトルと説明を書き換えてください。
+  -->
+
+  <section id="manga" aria-labelledby="h-manga">
+    <h2 id="h-manga">漫画</h2>
+    <p class="lead">農学にまつわる短い漫画です。</p>
+    <div class="cards">
+      <article class="card"><div class="pic">ここに漫画の表紙</div><div class="cap"><time datetime="2026-10-01">2026.10.01</time><h3>漫画のタイトル（サンプル）</h3></div></article>
+      <article class="card"><div class="pic">ここに漫画の表紙</div><div class="cap"><time datetime="2026-09-20">2026.09.20</time><h3>漫画のタイトル（サンプル）</h3></div></article>
+      <article class="card"><div class="pic">ここに漫画の表紙</div><div class="cap"><time datetime="2026-09-05">2026.09.05</time><h3>漫画のタイトル（サンプル）</h3></div></article>
+    </div>
+  </section>
+
+  <section id="illust" aria-labelledby="h-illust">
+    <h2 id="h-illust">イラスト</h2>
+    <p class="lead">作物や畑、勉強中に描いたスケッチです。</p>
+    <div class="cards">
+      <article class="card"><div class="pic">ここにイラスト</div><div class="cap"><time datetime="2026-10-01">2026.10.01</time><h3>イラストのタイトル（サンプル）</h3></div></article>
+      <article class="card"><div class="pic">ここにイラスト</div><div class="cap"><time datetime="2026-09-18">2026.09.18</time><h3>イラストのタイトル（サンプル）</h3></div></article>
+      <article class="card"><div class="pic">ここにイラスト</div><div class="cap"><time datetime="2026-09-02">2026.09.02</time><h3>イラストのタイトル（サンプル）</h3></div></article>
+    </div>
+  </section>
+
+  <section id="yonkoma" aria-labelledby="h-yon">
+    <h2 id="h-yon">4コマ</h2>
+    <p class="lead">畑や教室で起きた、ちょっとした出来事を4コマにします。</p>
+    <div class="yon cards">
+      <article class="card">
+        <div class="strip" aria-label="4コマ漫画の置き場所（サンプル）">
+          <div class="frame">1コマ目</div><div class="frame">2コマ目</div><div class="frame">3コマ目</div><div class="frame">4コマ目</div>
+        </div>
+        <div class="cap"><time datetime="2026-10-01">2026.10.01</time><h3>4コマのタイトル（サンプル）</h3></div>
+      </article>
+      <article class="card">
+        <div class="strip" aria-label="4コマ漫画の置き場所（サンプル）">
+          <div class="frame">1コマ目</div><div class="frame">2コマ目</div><div class="frame">3コマ目</div><div class="frame">4コマ目</div>
+        </div>
+        <div class="cap"><time datetime="2026-09-15">2026.09.15</time><h3>4コマのタイトル（サンプル）</h3></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="essay" aria-labelledby="h-essay">
+    <h2 id="h-essay">小論文</h2>
+    <p class="lead">学んだことを、短くまとめた軽い読みものです。</p>
+    <div class="essays">
+      <article class="essay">
+        <time datetime="2026-10-01">2026.10.01</time>
+        <a href="#essay"><h3>小論文のタイトルが入ります（サンプル）</h3></a>
+        <p>ここに記事の書き出しや、ひとことの説明が入ります。</p>
+      </article>
+      <article class="essay">
+        <time datetime="2026-09-10">2026.09.10</time>
+        <a href="#essay"><h3>小論文のタイトルが入ります（サンプル）</h3></a>
+        <p>ここに記事の書き出しや、ひとことの説明が入ります。</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <nav aria-label="フッターメニュー">
+    <a href="index.html">ホーム</a><a href="blog.html">ブログ</a><a href="column.html">コラム</a><a href="about.html">このサイトについて</a>
+  </nav>
+  <p style="margin-top:10px">© 実りのノート</p>
+</footer>
+
+</body>
+</html>
